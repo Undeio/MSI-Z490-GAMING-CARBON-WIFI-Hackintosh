@@ -1,7 +1,5 @@
 # MSI-Z490-Gaming-Carbon-WIFI-Hackintosh
 
-只为兴趣使然，草草组装了此 EFI，其中的不完善还请见谅，后面转战 PVE，不再更新；
-
 ## 重要提示 - 必须做的
 
 配置文件无法开箱即用，使用前请先修改`PlatformInfo`下的机型信息：
@@ -30,9 +28,17 @@
 
 ### 说明
 
-- OC 版本：0.77（RELEASE Versions）；
+- OC 版本：0.78；
 - Wi-Fi，蓝牙，随航，隔空投送正常；
 - 开关机，睡眠，唤醒正常(测试时间较短，仅供参考)；
+  唤醒说明：平时使用误触键盘或鼠标总会无端唤醒，所以这里仅支持按下电源键唤醒；
 - HDMI / DP 显示正常（单显示）；
 - 音频输出正常（麦克风未测试）；
 - USB 测试正常；
+
+  USB 定制说明：由于 15 端口限制，有线网卡左侧的两个 USB3.0 端口仅支持 3.0；
+
+  示意图：
+  ![USB 定制](https://tva1.sinaimg.cn/large/008i3skNly1gzdczpkwsyj30t40q8ac9.jpg)
+
+- OC 主题 `AppleSilicon`，来自 [heipg.cn](https://heipg.cn)；
