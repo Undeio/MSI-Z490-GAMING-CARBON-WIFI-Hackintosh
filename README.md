@@ -3,7 +3,7 @@
 ## 更新说明
 
 1. 官方文档更新，修改机型为`iMac20,2`，[官方说明](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#platforminfo)；
-2. 同步修改 USB 定制，改为通用定制，不再涉及机型信息；
+2. 同步修改 USB 定制，改为通用定制（`UTBMap.kext`），不再涉及机型信息，但需要配合`USBToolBox.kext`使用；
 3. 添加`SSDT-SBUS-MCHC.aml`，防止出现睡眠问题，[官方说明](https://dortania.github.io/OpenCore-Post-Install/universal/sleep.html#smbus)；
 4. 当前配置日常稳定使用，已关闭啰嗦模式，初次安装请执行以下操作：
    1. 替换 EFI/BOOT/BOOTx64.efi 为 DEBUG 版本；
