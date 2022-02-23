@@ -1,5 +1,18 @@
 # MSI-Z490-Gaming-Carbon-WIFI-Hackintosh
 
+## 更新说明
+
+1. 官方文档更新，修改机型为`iMac20,2`，[官方说明](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#platforminfo)；
+2. 同步修改 USB 定制，改为通用定制，不再涉及机型信息；
+3. 添加`SSDT-SBUS-MCHC.aml`，防止出现睡眠问题，[官方说明](https://dortania.github.io/OpenCore-Post-Install/universal/sleep.html#smbus)；
+4. 当前配置日常稳定使用，已关闭啰嗦模式，初次安装请执行以下操作：
+   1. 替换 EFI/BOOT/BOOTx64.efi 为 DEBUG 版本；
+   2. 替换 EFI/OC/Drivers/OpenRuntime.efi 为 DEBUG 版本；
+   3. 替换 EFI/OC/OpenCore.efi 为 DEBUG 版本；
+   4. 启用 Misc 设置中 Debug 选项下的 AppleDebug；
+   5. 请将 Misc 设置中 Debug 选项下的 Target 设置为 67；
+   6. 请在 NVRAM 设置中 Add 选项下`7C436110-AB2A-4BBB-A880-FE41995C9F82`条目的 boot-args 中添加 -v 参数；
+
 ## 重要提示 - 必须做的
 
 配置文件无法开箱即用，使用前请先修改`PlatformInfo`下的机型信息：
