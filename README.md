@@ -9,22 +9,22 @@
 1. 更新 OC 至 0.79；
 2. 更新设置，以使 Windows 下可以正确识别机型；
 
-   1. Kernel / Quicks / CustomSMBIOSGuid : `Enable`;
-   2. Platforminfo / Generic / SpoofVendor :`Enable`;
-   3. Platforminfo / UpdateSMBIOSMode : `Custom`;
-   4. 同时修改系统 UUID 为 Windows 系统中显示的 UUID，防止出现 Windows 激活失败问题（已发生并修复）；
-   5. 要查看 Windows 下的系统 UUID，请在系统管理员权限 CMD 窗口下依次执行如下命令：
+   - Kernel / Quicks / CustomSMBIOSGuid : `Enable`;
+   - Platforminfo / Generic / SpoofVendor :`Enable`;
+   - Platforminfo / UpdateSMBIOSMode : `Custom`;
+   - 同时修改系统 UUID 为 Windows 系统中显示的 UUID，防止出现 Windows 激活失败问题（已发生并修复）；
+   - 要查看 Windows 下的系统 UUID，请在系统管理员权限 CMD 窗口下依次执行如下命令：
 
-      ```powershell
-      wmic
+     ```powershell
+     wmic
 
-      csproduct # 或者 csproduct list full
-      ```
+     csproduct # 或者 csproduct list full
+     ```
 
 3. 不再尝试修复由 macOS 切换至 Windows 产生的蓝屏问题，得不偿失，现在直接使用 Windows 原生引导启动；
-   1. BIOS 启动选择快捷键 F11；
-   2. Windows 直接选择硬盘原生启动；
-   3. macOS 依旧使用 OC 引导启动；
+   - BIOS 启动选择快捷键 F11；
+   - Windows 直接选择硬盘原生启动；
+   - macOS 依旧使用 OC 引导启动；
 
 ### Old's
 
@@ -35,12 +35,12 @@
 3. 添加`SSDT-SBUS-MCHC.aml`，防止出现睡眠问题，[官方说明](https://dortania.github.io/OpenCore-Post-Install/universal/sleep.html#smbus)；
 4. 在系统报告中添加网卡 / USB 控制器等常用 PCI 设备；
 5. 当前配置日常稳定使用，已关闭啰嗦模式，初次安装请执行以下操作：
-   1. 替换 EFI/BOOT/BOOTx64.efi 为 DEBUG 版本；
-   2. 替换 EFI/OC/Drivers/OpenRuntime.efi 为 DEBUG 版本；
-   3. 替换 EFI/OC/OpenCore.efi 为 DEBUG 版本；
-   4. 启用 Misc 设置中 Debug 选项下的 AppleDebug；
-   5. 请将 Misc 设置中 Debug 选项下的 Target 设置为 67；
-   6. 请在 NVRAM 设置中 Add 选项下`7C436110-AB2A-4BBB-A880-FE41995C9F82`条目的 boot-args 中添加 -v 参数；
+   - 替换 EFI/BOOT/BOOTx64.efi 为 DEBUG 版本；
+   - 替换 EFI/OC/Drivers/OpenRuntime.efi 为 DEBUG 版本；
+   - 替换 EFI/OC/OpenCore.efi 为 DEBUG 版本；
+   - 启用 Misc 设置中 Debug 选项下的 AppleDebug；
+   - 请将 Misc 设置中 Debug 选项下的 Target 设置为 67；
+   - 请在 NVRAM 设置中 Add 选项下`7C436110-AB2A-4BBB-A880-FE41995C9F82`条目的 boot-args 中添加 -v 参数；
 
 ## 配置说明
 
