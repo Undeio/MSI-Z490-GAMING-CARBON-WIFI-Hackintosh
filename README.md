@@ -2,10 +2,26 @@
 
 ## 更新说明
 
+---
+
+### 2022.03.16
+
+1. 更新 OC 至 0.79；
+2. 更新设置，以使 Windows 下可以正确识别机型；
+   1. Kernel / Quicks / CustomSMBIOSGuid : Enable;
+   2. Platforminfo / Generic / SpoofVendor : Enable;
+   3. Platforminfo / UpdateSMBIOSMode : Custom;
+   4. 同时修改系统 UUID 为 Windows 系统中显示的 UUID，防止出现 Windows 激活失败问题（已经历）；
+
+---
+
+### 2022.02.24
+
 1. 官方文档更新，修改机型为`iMac20,2`，[官方说明](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#platforminfo)；
 2. 同步修改 USB 定制，改为通用定制（`UTBMap.kext`），不再涉及机型信息，但需要配合`USBToolBox.kext`使用；
 3. 添加`SSDT-SBUS-MCHC.aml`，防止出现睡眠问题，[官方说明](https://dortania.github.io/OpenCore-Post-Install/universal/sleep.html#smbus)；
-4. 当前配置日常稳定使用，已关闭啰嗦模式，初次安装请执行以下操作：
+4. 在系统报告中添加网卡 / USB 控制器等常用 PCI 设备；
+5. 当前配置日常稳定使用，已关闭啰嗦模式，初次安装请执行以下操作：
    1. 替换 EFI/BOOT/BOOTx64.efi 为 DEBUG 版本；
    2. 替换 EFI/OC/Drivers/OpenRuntime.efi 为 DEBUG 版本；
    3. 替换 EFI/OC/OpenCore.efi 为 DEBUG 版本；
@@ -27,29 +43,28 @@
 
 |   硬件   |                     型号                     |         备注         |
 | :------: | :------------------------------------------: | :------------------: |
-|   机箱   |                 机械大师 C34                 |       真的很小       |
+|   机箱   |                 机械大师 C34                 | 堪比 ITX 的 ATX 机箱 |
 |   主板   |         MSI Z490 GAMING CARBON WIFI          |         ATX          |
 |   BIOS   |                 E7C73IMS.1A0                 |      2021-10-18      |
 |   CPU    |               Intel i9-10850K                | 个人感觉比 10900K 香 |
-|   内存   |           英睿达铂胜 D4 3600 16Gx4           |     准备转投 PVE     |
+|   内存   |           英睿达铂胜 D4 3600 16Gx4           |   未来可能会用 PVE   |
 |   磁盘   |                 铠侠 RD10 1T                 |                      |
-|   声卡   |               Realtek ALC1220P               | VEN_10EC & DEV_1168  |
+|   声卡   |               Realtek ALC1220A               | VEN_10EC & DEV_1168  |
 | 有线网卡 |               Realtek RTL8125B               | VEN_10EC & DEV_8125  |
 | 无线网卡 |                 Intel AX201                  |      BIOS 禁用       |
 | 无线网卡 |                  BCM94360Z3                  |                      |
 |   蓝牙   |                   同上 👆                    |                      |
-|   显卡   | 昂达 RX560 典藏版，说白了就是国内特供版 560D |  太穷，只配用亮机卡  |
+|   显卡   | 昂达 RX560 典藏版，说白了就是国内特供版 560D |   亮机卡，原生免驱   |
 |  显示器  |                 三星 C24F390                 |         HDMI         |
 
 ### 详细信息
 
-- OC 版本：0.78；
 - Wi-Fi，蓝牙，随航，隔空投送正常；
-- 开关机，睡眠，唤醒正常(测试时间较短，仅供参考)；
+- 开关机，睡眠，唤醒正常；
 
   唤醒说明：平时使用误触键盘或鼠标总会无端唤醒，所以这里仅支持按下电源键唤醒；
 
-- HDMI / DP 显示正常（单显示）；
+- HDMI / DP 显示正常（单显示 ｜ 双显示 ｜ 热拔插）；
 - 音频输出正常（麦克风未测试）；
 - USB 测试正常；
 
