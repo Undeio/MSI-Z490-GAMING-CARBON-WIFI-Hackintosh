@@ -10,7 +10,7 @@
 2. 更新设置，以使 Windows 下可以正确识别机型；
 
    1. Kernel / Quicks / CustomSMBIOSGuid : `Enable`;
-   2. Platforminfo / Generic / SpoofVendor :` Enable`;
+   2. Platforminfo / Generic / SpoofVendor :`Enable`;
    3. Platforminfo / UpdateSMBIOSMode : `Custom`;
    4. 同时修改系统 UUID 为 Windows 系统中显示的 UUID，防止出现 Windows 激活失败问题（已发生并修复）；
    5. 要查看 Windows 下的系统 UUID，请在系统管理员权限 CMD 窗口下依次执行如下命令：
