@@ -4,6 +4,8 @@
 
 ### New's
 
+---
+
 1. 更新 OC 至 0.79；
 2. 更新设置，以使 Windows 下可以正确识别机型；
 
@@ -24,9 +26,9 @@
    2. Windows 直接选择硬盘原生启动；
    3. macOS 依旧使用 OC 引导启动；
 
----
-
 ### Old's
+
+---
 
 1. 官方文档更新，修改机型为`iMac20,2`，[官方说明](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#platforminfo)；
 2. 同步修改 USB 定制，改为通用定制（`UTBMap.kext`），不再涉及机型信息，但需要配合`USBToolBox.kext`使用；
